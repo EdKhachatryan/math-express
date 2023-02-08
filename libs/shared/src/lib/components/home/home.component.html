@@ -1,0 +1,14 @@
+<div color="primary" fxLayout="row">
+    <span>Customer Portal</span>
+    <div class="right-nav">
+ <!--   <span>
+      <button >{{(user$ | async)?.username}}</button>
+      <button  [routerLink]="['/products']" routerLinkActive="router-link-active">Products</button>
+      <button >Logout</button>
+    </span>-->
+        <span >
+      <a  [routerLink]="['/login']" >Login</a>
+    </span>
+    </div>
+</div>
+<ng-content></ng-content>

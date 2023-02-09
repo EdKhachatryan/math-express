@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, of } from "rxjs";
 
 @Component({
-  selector: 'math-express-home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })

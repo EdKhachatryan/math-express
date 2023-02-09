@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@math-express/data-access": ["libs/data-access/src/index.ts"],
       "@math-express/libs/auth": ["libs/auth/src/index.ts"],
       "@math-express/libs/shared": ["libs/shared/src/index.ts"]
     }

@@ -6,7 +6,6 @@ import { AuthModule } from "@math-express/libs/auth";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "@math-express/libs/shared";
 import { RouterModule } from "@angular/router";
-// import { NxModule } from '@nrwl/nx';
 
 @NgModule({
     declarations: [ AppComponent ],
@@ -15,7 +14,6 @@ import { RouterModule } from "@angular/router";
         AuthModule,
         BrowserModule,
         BrowserAnimationsModule,
-        // NxModule.forRoot(),
         SharedModule,
         RouterModule,
 

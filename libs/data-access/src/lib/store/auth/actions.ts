@@ -11,6 +11,6 @@ export class Logout {
     static readonly type = '[Auth] Logout';
 }
 
-export class ClearUser {
-    static readonly type = '[Auth] ClearUser';
+export class Auth {
+    static readonly type = '[Auth] Auth';
 }

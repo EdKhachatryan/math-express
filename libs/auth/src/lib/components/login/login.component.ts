@@ -1,29 +1,43 @@
-import { Component } from '@angular/core';
-import { Authenticate, AuthService } from "@math-express/data-access";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Authenticate, Login } from "@math-express/data-access";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Store } from "@ngxs/store";
+import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
+import { tap } from "rxjs";
 
+@UntilDestroy()
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: [ './login.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
 
-  loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
-  });
+    loginForm = new FormGroup({
+        username: new FormControl('', [ Validators.required ]),
+        password: new FormControl('', [ Validators.required ])
+    });
 
-  constructor(
-      private authService: AuthService,
-      public activeModal: NgbActiveModal) { }
-
-  login() {
-    const loginData: Authenticate = {
-      username: this.loginForm.value.username as string,
-      password: this.loginForm.value.password as string,
+    constructor(
+        public activeModal: NgbActiveModal,
+        private store: Store) {
     }
-    this.authService.login(loginData).subscribe();
-  }
+
+    login() {
+        const loginData: Authenticate = {
+            username: this.loginForm.value.username as string,
+            password: this.loginForm.value.password as string,
+        }
+        this.store.dispatch(new Login(loginData)).pipe(
+            untilDestroyed(this),
+            tap(res => {
+            const id = res.auth.user.id;
+
+            if (id && id !== -1) {
+                this.activeModal.close('Close click');
+            }
+        })).subscribe();
+    }
 }

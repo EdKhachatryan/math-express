@@ -12,12 +12,15 @@ export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
   login(authenticate: Authenticate): Observable<User> {
-
     return this.httpClient.post<User>(
         environment.apiEndpoint + '/login',
         authenticate
     ).pipe(tap((user: User) => {
       localStorage.setItem('user', JSON.stringify(user));
     }));
+  }
+
+  logout(): void {
+    localStorage.removeItem('user')
   }
 }

@@ -4,11 +4,6 @@ import { LoginComponent } from "./components/login/login.component";
 
 
 const routes: Routes = [
-/*    {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: '/(modal:auth/login)',
-    },*/
     {
         path: 'login',
         component: LoginComponent,

@@ -8,7 +8,7 @@ import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 
 export interface AuthStateModel {
     user: User;
-    authenticated?: boolean
+    authenticated: boolean
 }
 
 @State<AuthStateModel>({

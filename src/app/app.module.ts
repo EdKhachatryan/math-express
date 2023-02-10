@@ -9,6 +9,8 @@ import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { NgxsModule } from "@ngxs/store";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { CalculationModule } from "@math-express/calculation";
+import { AuthGuard } from "@math-express/data-access";
 
 @NgModule({
     declarations: [ AppComponent ],
@@ -17,11 +19,12 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
         AuthModule,
         BrowserModule,
         BrowserAnimationsModule,
+        CalculationModule,
         SharedModule,
         RouterModule,
         HttpClientModule,
         NgbModule,
-        NgxsModule.forRoot([], ),
+        NgxsModule.forRoot([],),
     ],
     providers: [],
     bootstrap: [ AppComponent ],

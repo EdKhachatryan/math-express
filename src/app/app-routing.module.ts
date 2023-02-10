@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "../../libs/shared/src/lib/components/home/home.component";
+import { AuthGuard } from "@math-express/data-access";
 
 
 /*const routes: Routes = [
@@ -30,6 +31,15 @@ export const routes: Routes = [
     {
         path: '',
         loadChildren:  () => import('@math-express/libs/shared').then((m) => m.SharedModule),
+    },
+    {
+        path: 'calculation',
+        loadChildren:  () => import('@math-express/calculation').then((m) => m.CalculationModule),
+        canActivate: [ AuthGuard ],
+    },
+    {
+        path: '**',
+        redirectTo: 'page-not-found',
     },
 ]
 

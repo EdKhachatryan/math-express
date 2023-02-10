@@ -7,6 +7,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
 import { AuthModule } from "@math-express/libs/auth";
+import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import { AuthModule } from "@math-express/libs/auth";
         HomeComponent,
         NavbarComponent,
         FooterComponent,
+        PageNotFoundComponent,
     ],
     exports: [
         NavbarComponent,

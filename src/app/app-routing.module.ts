@@ -24,14 +24,17 @@ import { HomeComponent } from "../../libs/shared/src/lib/components/home/home.co
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
-        children: []
+        pathMatch: 'full',
+        redirectTo: '/',
+    },
+    {
+        path: '',
+        loadChildren:  () => import('@math-express/libs/shared').then((m) => m.SharedModule),
     },
 ]
 
 @NgModule({
     imports: [ RouterModule.forRoot(routes, {
-        // Notice custom routing logic down below
         scrollPositionRestoration: 'disabled',
         anchorScrolling: 'disabled',
         onSameUrlNavigation: 'reload',

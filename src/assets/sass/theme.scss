@@ -1,0 +1,54 @@
+/*!
+
+ =========================================================
+ * Paper Kit 2 Angular - v1.5.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/paper-kit-2-angular
+ * Copyright 2020 Creative Tim (https://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/timcreative/theme/blob/master/LICENSE.md)
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */
+
+@import "theme/variables";
+@import "theme/mixins";
+
+@import "theme/typography";
+
+// Core CSS
+@import "theme/misc";
+@import "theme/buttons";
+@import "theme/inputs";
+@import "theme/progress-bars";
+@import "theme/sliders";
+@import "theme/alerts";
+@import "theme/labels";
+@import "theme/tooltips-and-popovers";
+@import "theme/sections";
+@import "theme/checkbox-radio";
+@import "theme/navbars";
+@import "theme/images";
+@import "theme/cards";
+@import "theme/footers";
+
+
+// Bootstrap Switch
+@import "theme/bootstrap-switch";
+
+// Fancy Stuff
+@import "theme/dropdown";
+//
+// icons
+@import "theme/icons";
+//
+@import "theme/tabs-navs-pagination";
+@import "theme/collapse";
+@import "theme/carousel";
+@import "theme/modal";
+//
+@import "theme/responsive";
+@import "theme/social-buttons";
+@import "theme/examples";

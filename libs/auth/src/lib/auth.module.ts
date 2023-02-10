@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
 import { AuthRoutingModule } from "./auth-routing.module";
-import { SharedModule } from "@math-express/libs/shared";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { DataAccessModule } from "@math-express/data-access";
+import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
     imports: [
@@ -16,11 +15,11 @@ import { DataAccessModule } from "@math-express/data-access";
         RouterModule,
         DataAccessModule,
         HttpClientModule,
-        SharedModule,
         ReactiveFormsModule,
+        NgbModalModule,
     ],
-    declarations: [ LoginComponent, LoginFormComponent ],
-    exports: [ LoginComponent, LoginFormComponent ],
+    declarations: [ LoginComponent ],
+    exports: [ LoginComponent ],
 })
 export class AuthModule {
 }

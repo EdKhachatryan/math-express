@@ -20,24 +20,11 @@
                 <div class="card">
                     <div class="card-body">
                         {{(calculationResult$ | async)}}
-                        {{ (error$ | async) }}
                     </div>
                 </div>
-                <ngb-alert #selfClosingAlert  class="position-absolute" *ngIf="(error$ | async)" type="danger" (closed)="errorMessage = ''">
-                    {{ (error$ | async) }}
 
-                </ngb-alert>
             </div>
 
         </div>
     </div>
 </section>
-
-<!--
-<ng-template >
--->
-   <!-- <ngb-alert #selfClosingAlert  class="position-absolute" *ngIf="(error$ | async)" type="danger" (closed)="errorMessage = ''">
-        {{ errorMessage }}
-        errorMessage
-    </ngb-alert>-->
-<!--</ng-template>-->

@@ -10,8 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgxsModule } from "@ngxs/store";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CalculationModule } from "@math-express/calculation";
-import { GlobalErrorHandlerService } from "@math-express/data-access";
-import { ToastrModule } from "ngx-toastr";
+import { ErrorHandlerService } from "@math-express/data-access";
 
 @NgModule({
     declarations: [ AppComponent ],
@@ -26,9 +25,8 @@ import { ToastrModule } from "ngx-toastr";
         HttpClientModule,
         NgbModule,
         NgxsModule.forRoot([],),
-        ToastrModule.forRoot(),
     ],
-    providers: [ {provide: ErrorHandler, useClass: GlobalErrorHandlerService} ],
+    providers: [ {provide: ErrorHandler, useClass: ErrorHandlerService} ],
     bootstrap: [ AppComponent ],
 })
 export class AppModule {

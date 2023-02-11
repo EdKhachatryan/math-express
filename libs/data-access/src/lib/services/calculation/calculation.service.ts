@@ -16,7 +16,7 @@ export class CalculationService {
                 expression.push(num);
             } else {
                 if (expression.length < 2) {
-                    throw new Error(`${ item }: insufficient operands.`);
+                    throw new Error(`"${ item }" insufficient operands.`);
                 }
                 const o2 = expression.pop(), o1 = expression.pop();
 
@@ -46,7 +46,6 @@ export class CalculationService {
             throw new Error(`${ expression }: insufficient operators.`);
         }
 
-        console.log(Number(expression));
         return of(Number(expression));
     }
 

@@ -1,9 +1,53 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CalculationService {
 
-  constructor() { }
+    convertToken(tokens: Array<string>): Observable<number> {
+        const expression: Array<string | number> = [];
+
+        tokens.map((item) => {
+            const num = Number(item);
+
+            if (!isNaN(num)) {
+                expression.push(num);
+            } else {
+                if (expression.length < 2) {
+                    throw new Error(`${ item }: insufficient operands.`);
+                }
+                const o2 = expression.pop(), o1 = expression.pop();
+
+                switch (item) {
+                    case '+':
+                        expression.push(Number(o1) + Number(o2));
+                        break;
+                    case '-':
+                        expression.push(Number(o1) - Number(o2));
+                        break;
+                    case '*':
+                        expression.push(Number(o1) * Number(o2));
+                        break;
+                    case '/':
+                        expression.push(Math.trunc(Number(o1) / Number(o2)));
+                        break;
+                    case '^':
+                        expression.push(Math.pow(Number(o1), Number(o2)));
+                        break;
+                    default:
+                        throw new Error(`Unrecognized operator: [${ item }]`);
+                }
+            }
+        })
+
+        if (expression.length > 1) {
+            throw new Error(`${ expression }: insufficient operators.`);
+        }
+
+        console.log(Number(expression));
+        return of(Number(expression));
+    }
+
 }

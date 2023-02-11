@@ -15,7 +15,7 @@ import { tap } from "rxjs";
 })
 export class LoginComponent {
 
-    loginForm = new FormGroup({
+    public loginForm = new FormGroup({
         username: new FormControl('', [ Validators.required ]),
         password: new FormControl('', [ Validators.required ])
     });

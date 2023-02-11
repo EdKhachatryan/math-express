@@ -11,6 +11,7 @@ import { NgxsModule } from "@ngxs/store";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CalculationModule } from "@math-express/calculation";
 import { GlobalErrorHandlerService } from "@math-express/data-access";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
     declarations: [ AppComponent ],
@@ -25,6 +26,7 @@ import { GlobalErrorHandlerService } from "@math-express/data-access";
         HttpClientModule,
         NgbModule,
         NgxsModule.forRoot([],),
+        ToastrModule.forRoot(),
     ],
     providers: [ {provide: ErrorHandler, useClass: GlobalErrorHandlerService} ],
     bootstrap: [ AppComponent ],

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CalculationComponent } from './components/calculation/calculation.component';
 import { CalculationRoutingModule } from "./calculation-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
+import { NgbAlertModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
     imports: [
@@ -11,6 +12,7 @@ import { ReactiveFormsModule } from "@angular/forms";
         RouterModule,
         CalculationRoutingModule,
         ReactiveFormsModule,
+        NgbAlertModule,
     ],
     declarations: [ CalculationComponent ],
 })

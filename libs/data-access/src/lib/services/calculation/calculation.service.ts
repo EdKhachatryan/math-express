@@ -6,7 +6,12 @@ import { Observable, of } from 'rxjs';
 })
 export class CalculationService {
 
-    convertToken(tokens: Array<string>): Observable<number> {
+    convertToken(token: string): Observable<number> {
+        if (!token) {
+            throw new Error('Token is required');
+        }
+
+        const tokens: Array<string> =  JSON.parse(token);
         const expression: Array<string | number> = [];
 
         tokens.map((item) => {

@@ -7,8 +7,17 @@
                     <form [formGroup]="calculationForm">
                         <div class="form-group">
                             <label for="exampleDataList" class="form-label">Calculation data</label>
-                            <input class="form-control" id="exampleDataList" formControlName="calcData"
+                            <input class="form-control"
+                                   id="exampleDataList"
+                                   formControlName="calcData"
                                    placeholder="Type to calculate...">
+                            <ng-container
+                                    *ngIf="calculationForm.controls.calcData.touched &&
+                                    calculationForm.controls.calcData.invalid &&
+                                    calculationForm.controls.calcData.errors?.['required']">
+                                <div class="invalid-feedback">
+                                Token Is Required</div>
+                            </ng-container>
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-primary btn-block w-100" (click)="calculate()">

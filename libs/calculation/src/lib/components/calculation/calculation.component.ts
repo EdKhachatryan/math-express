@@ -24,8 +24,8 @@ export class CalculationComponent {
     }
 
     calculate() {
-        const data = this.calculationForm.value.calcData
-        this.calculation.convertToken(JSON.parse(data as string))
+        const data= this.calculationForm.value.calcData
+        this.calculation.convertToken(data as string)
             .pipe(untilDestroyed(this),
                 tap(res => {
                         this.calculationResult$.next(res);

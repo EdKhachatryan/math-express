@@ -3,13 +3,14 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, tap } from "rxjs";
 import { Authenticate, User } from "../../models";
 import { environment } from "../../../../../../src/environments/environment";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   login(authenticate: Authenticate): Observable<User> {
     return this.httpClient.post<User>(
@@ -21,6 +22,8 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('user')
+    this.router.navigateByUrl('/');
+    localStorage.removeItem('user');
+
   }
 }

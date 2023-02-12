@@ -9,7 +9,6 @@ export declare enum NgEnvironment {
 }
 
 export interface Environment {
-    // ngEnv: NgEnvironment;
     enableAngularProduction: boolean;
     apiEndpoint: string;
 }

@@ -1,18 +1,6 @@
-import { Injectable, TemplateRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable, Subject } from "rxjs";
-
-export enum EventTypes {
-    Success = 'success',
-    Info = 'info',
-    Warning = 'warning',
-    Error = 'error',
-}
-
-export interface ToastEvent {
-    type: EventTypes;
-    title: string;
-    message: string;
-}
+import { EventTypes, ToastEvent } from "../../models";
 
 @Injectable({
     providedIn: 'root'

@@ -4,7 +4,7 @@ import { Auth, Login, Logout, } from './actions';
 import { User } from "../../models";
 import { AuthService } from "../../services";
 import { tap } from "rxjs";
-import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
+import { UntilDestroy } from "@ngneat/until-destroy";
 
 export interface AuthStateModel {
     user: User;

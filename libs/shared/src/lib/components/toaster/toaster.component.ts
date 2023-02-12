@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ToasterService, ToastEvent } from "@math-express/data-access";
 
-
 @Component({
     selector: 'app-toaster',
     templateUrl: './toaster.component.html',

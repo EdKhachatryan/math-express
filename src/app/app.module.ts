@@ -11,6 +11,7 @@ import { NgxsModule } from "@ngxs/store";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CalculationModule } from "@math-express/calculation";
 import { ErrorHandlerService } from "@math-express/data-access";
+import { UtilModule } from "@math-express/util";
 
 @NgModule({
     declarations: [ AppComponent ],
@@ -25,6 +26,7 @@ import { ErrorHandlerService } from "@math-express/data-access";
         HttpClientModule,
         NgbModule,
         NgxsModule.forRoot([],),
+        UtilModule,
     ],
     providers: [ {provide: ErrorHandler, useClass: ErrorHandlerService} ],
     bootstrap: [ AppComponent ],

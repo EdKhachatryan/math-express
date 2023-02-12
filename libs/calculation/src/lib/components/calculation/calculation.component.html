@@ -17,9 +17,12 @@
                         </div>
                     </form>
                 </div>
-                <div class="card">
+
+                <div class="card mb-3 mt-3">
+                    <img src="./assets/img/banner.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        {{(calculationResult$ | async)}}
+                        <h5 class="card-title">Calculation result</h5>
+                        <h2 class="card-text"> {{(calculationResult$ | async) | roundPipe}}</h2>
                     </div>
                 </div>
 

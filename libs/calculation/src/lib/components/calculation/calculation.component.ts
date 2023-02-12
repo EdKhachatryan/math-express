@@ -24,14 +24,14 @@ export class CalculationComponent {
     }
 
     calculate() {
-        this.calculation.convertToken(JSON.parse('["10","6","9","3","+","-11","*","/","*","17","+", "sadff", "5","+"]'))
+        const data = this.calculationForm.value.calcData
+        this.calculation.convertToken(JSON.parse(data as string))
             .pipe(untilDestroyed(this),
                 tap(res => {
                         this.calculationResult$.next(res);
                     },
                     error => {
-                        this.errorHandler.handleError(error).pipe(tap(message => {
-                        })).subscribe();
+                        this.errorHandler.handleError(error).pipe().subscribe();
                     }),
             ).subscribe();
     }

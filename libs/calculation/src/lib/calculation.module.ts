@@ -5,6 +5,7 @@ import { CalculationComponent } from './components/calculation/calculation.compo
 import { CalculationRoutingModule } from "./calculation-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgbAlertModule } from "@ng-bootstrap/ng-bootstrap";
+import { UtilModule } from "@math-express/util";
 
 @NgModule({
     imports: [
@@ -13,6 +14,7 @@ import { NgbAlertModule } from "@ng-bootstrap/ng-bootstrap";
         CalculationRoutingModule,
         ReactiveFormsModule,
         NgbAlertModule,
+        UtilModule
     ],
     declarations: [ CalculationComponent ],
 })

@@ -18,7 +18,8 @@
       "@math-express/calculation": ["libs/calculation/src/index.ts"],
       "@math-express/data-access": ["libs/data-access/src/index.ts"],
       "@math-express/libs/auth": ["libs/auth/src/index.ts"],
-      "@math-express/libs/shared": ["libs/shared/src/index.ts"]
+      "@math-express/libs/shared": ["libs/shared/src/index.ts"],
+      "@math-express/util": ["libs/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
